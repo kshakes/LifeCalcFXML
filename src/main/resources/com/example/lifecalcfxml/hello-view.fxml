@@ -3,11 +3,11 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Text?>
 <?import javafx.scene.text.Font?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.control.Button?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.lifecalcfxml.HelloController">
     <left>
@@ -15,34 +15,33 @@
             <padding>
                 <Insets left="10" right="10" bottom="50"/>
             </padding>
-            <Text text="Home" style="-fx-fill: white;">
+            <Button text="Home" style="-fx-text-fill: white; -fx-background-color: transparent;">
                 <font>
                     <Font name="Times New Roman" size="25"/>
                 </font>
-            </Text>
-            <Text text="Salary" style="-fx-fill: white;">
+            </Button>
+            <Button text="Salary" style="-fx-text-fill: white; -fx-background-color: transparent;">
                 <font>
                     <Font name="Times New Roman" size="25"/>
                 </font>
-            </Text>
-            <Text text="Emergency" style="-fx-fill: white;">
+            </Button>
+            <Button text="Emergency" style="-fx-text-fill: white; -fx-background-color: transparent;">
                 <font>
                     <Font name="Times New Roman" size="25"/>
                 </font>
-            </Text>
-            <Text text="Retirement" style="-fx-fill: white;">
+            </Button>
+            <Button text="Retirement" style="-fx-text-fill: white; -fx-background-color: transparent;">
                 <font>
                     <Font name="Times New Roman" size="25"/>
                 </font>
-            </Text>
-
+            </Button>
         </VBox>
     </left>
 
     <center>
         <Pane>
-            <Rectangle width="345" height="150" arcWidth="20" arcHeight="20" fill="#B6C2D9" layoutY="50" layoutX="10"/>
-            <Rectangle width="345" height="500" arcWidth="20" arcHeight="20" fill="#B6C2D9" layoutY="250" layoutX="10"/>
+            <Rectangle width="310" height="150" arcWidth="20" arcHeight="20" fill="#B6C2D9" layoutY="50" layoutX="10"/>
+            <Rectangle width="310" height="500" arcWidth="20" arcHeight="20" fill="#B6C2D9" layoutY="250" layoutX="10"/>
 
         </Pane>
     </center>
