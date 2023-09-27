@@ -13,24 +13,24 @@
     <left>
         <VBox alignment="CENTER" style="-fx-background-color: #272932;" spacing="20">
             <padding>
-                <Insets left="10" right="10" bottom="50"/>
+                <Insets bottom="50"/>
             </padding>
-            <Button text="Home" style="-fx-text-fill: white; -fx-background-color: transparent;">
+            <Button maxWidth="Infinity" stylesheets="@styleClass.css" text="Home">
                 <font>
                     <Font name="Times New Roman" size="25"/>
                 </font>
             </Button>
-            <Button text="Salary" style="-fx-text-fill: white; -fx-background-color: transparent;">
+            <Button maxWidth="Infinity" text="Salary" stylesheets="@styleClass.css">
                 <font>
                     <Font name="Times New Roman" size="25"/>
                 </font>
             </Button>
-            <Button text="Emergency" style="-fx-text-fill: white; -fx-background-color: transparent;">
+            <Button maxWidth="Infinity" text="Emergency" stylesheets="@styleClass.css">
                 <font>
                     <Font name="Times New Roman" size="25"/>
                 </font>
             </Button>
-            <Button text="Retirement" style="-fx-text-fill: white; -fx-background-color: transparent;">
+            <Button maxWidth="Infinity" text="Retirement" stylesheets="@styleClass.css">
                 <font>
                     <Font name="Times New Roman" size="25"/>
                 </font>
