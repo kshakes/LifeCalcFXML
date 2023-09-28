@@ -1,8 +1,12 @@
 .button{
     -fx-text-fill: white;
-    -fx-background-color: black;
+    -fx-background-color: transparent;
 }
 .button:hover{
     -fx-text-fill: grey;
-    -fx-background-color: white;
+}
+
+.textField{
+    -fx-text-fill: grey;
+
 }
