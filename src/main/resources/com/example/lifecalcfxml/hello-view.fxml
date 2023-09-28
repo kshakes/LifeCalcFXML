@@ -1,48 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Font?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.control.Button?>
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.lifecalcfxml.HelloController">
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.HelloController">
     <left>
-        <VBox alignment="CENTER" style="-fx-background-color: #272932;" spacing="20">
+        <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #272932;" stylesheets="@styleClass.css">
             <padding>
-                <Insets bottom="50"/>
+                <Insets bottom="50" />
             </padding>
-            <Button maxWidth="Infinity" stylesheets="@styleClass.css" text="Home">
+            <Button maxWidth="Infinity" styleClass="button" text="Home">
                 <font>
-                    <Font name="Times New Roman" size="25"/>
+                    <Font name="Times New Roman" size="25" />
                 </font>
             </Button>
-            <Button maxWidth="Infinity" text="Salary" stylesheets="@styleClass.css">
+            <Button maxWidth="Infinity" styleClass="button" text="Salary">
                 <font>
-                    <Font name="Times New Roman" size="25"/>
+                    <Font name="Times New Roman" size="25" />
                 </font>
             </Button>
-            <Button maxWidth="Infinity" text="Emergency" stylesheets="@styleClass.css">
+            <Button maxWidth="Infinity" styleClass="button" text="Emergency">
                 <font>
-                    <Font name="Times New Roman" size="25"/>
+                    <Font name="Times New Roman" size="25" />
                 </font>
             </Button>
-            <Button maxWidth="Infinity" text="Retirement" stylesheets="@styleClass.css">
+            <Button maxWidth="Infinity" styleClass="button" text="Retirement">
                 <font>
-                    <Font name="Times New Roman" size="25"/>
+                    <Font name="Times New Roman" size="25" />
                 </font>
             </Button>
         </VBox>
     </left>
-
     <center>
-        <Pane>
-            <Rectangle width="310" height="150" arcWidth="20" arcHeight="20" fill="#B6C2D9" layoutY="50" layoutX="10"/>
-            <Rectangle width="310" height="500" arcWidth="20" arcHeight="20" fill="#B6C2D9" layoutY="250" layoutX="10"/>
+        <Pane stylesheets="@styleClass.css">
+            <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="150" layoutX="10" layoutY="50" width="333" />
+            <Text fill="white" layoutX="140.0" layoutY="80.0" text="Salary">
+                <font>
+                    <Font size="30" />
+                </font>
+            </Text>
+            <TextField fx:id="salaryNum" alignment="CENTER" blendMode="MULTIPLY" layoutX="10.0" layoutY="90.0" prefHeight="65.0" prefWidth="332.0" styleClass="textField">
+                <font>
+                    <Font size="30" />
+                </font>
+            </TextField>
+            <Button alignment="CENTER" layoutX="10" layoutY="155.0" onAction="#calc" prefHeight="40" prefWidth="333" stylesheets="@styleClass.css" text="Confirm">
+                <font>
+                    <Font size="20" />
+                </font>
+            </Button>
 
+            <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="500" layoutX="10" layoutY="250" width="333" />
+            <Text fx:id="showInfo" fill="white" layoutX="11.0" layoutY="282.0" text="placeholder" wrappingWidth="330.3173828125">
+                <font>
+                    <Font size="30" />
+                </font>
+            </Text>
         </Pane>
     </center>
+
 </BorderPane>
