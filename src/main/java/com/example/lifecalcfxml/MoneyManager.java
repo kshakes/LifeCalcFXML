@@ -2,16 +2,12 @@ package com.example.lifecalcfxml;
 
 public class MoneyManager {
 
-    private double salary;
     private double monthly;
 
     public MoneyManager() {
 
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
     public double getmonthly() {
         return monthly;
     }

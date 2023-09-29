@@ -27,7 +27,6 @@ public class HelloController {
         if (!salaryNum.getText().equals("")){
             try{
                 double salaryText = Double.parseDouble(salaryNum.getText());
-                mm.setSalary(salaryText);
                 mm.setmonthly(salaryText);
                 showInfo.setText("Monthly = £" + mm.getmonthly());
             } catch (NumberFormatException e){
