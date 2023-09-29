@@ -25,7 +25,7 @@
                     <Font name="Times New Roman" size="25" />
                 </font>
             </Button>
-            <Button maxWidth="Infinity" styleClass="button" text="Emergency">
+            <Button maxWidth="Infinity" styleClass="button" text="Emergency" onAction="#goEmergency">
                 <font>
                     <Font name="Times New Roman" size="25" />
                 </font>
@@ -45,8 +45,32 @@
                     <Font size="30" />
                 </font>
             </Text>
-            <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="500" layoutX="10" layoutY="250" width="333" />
+            <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="500" layoutX="10" layoutY="250" width="333"/>
+            <Text fill="white" layoutX="11.0" layoutY="282.0" text="Welcome to the Life Calculator" wrappingWidth="330" textAlignment="CENTER">
+                <font>
+                    <Font size="30" />
+                </font>
+            </Text>
+            <Text fill="white" layoutX="20.0" layoutY="400.0" text="This aims to:" wrappingWidth="330" textAlignment="LEFT">
+                <font>
+                    <Font size="30" />
+                </font>
+            </Text>
+            <Text fill="white" layoutX="20.0" layoutY="440.0" text="Help visualise salaries" wrappingWidth="330" textAlignment="CENTER">
+                <font>
+                    <Font size="25" />
+                </font>
+            </Text>
+            <Text fill="white" layoutX="20.0" layoutY="480.0" text="Help Budget" wrappingWidth="330" textAlignment="CENTER">
+                <font>
+                    <Font size="25" />
+                </font>
+            </Text>
+            <Text fill="white" layoutX="20.0" layoutY="520.0" text="Create Emergency Funds" wrappingWidth="330" textAlignment="CENTER">
+                <font>
+                    <Font size="25" />
+                </font>
+            </Text>
         </Pane>
     </center>
-
 </BorderPane>

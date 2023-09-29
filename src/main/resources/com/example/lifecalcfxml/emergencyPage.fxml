@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -40,30 +39,13 @@
     </left>
     <center>
         <Pane stylesheets="@styleClass.css">
-            <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="150" layoutX="10" layoutY="50" width="333" />
-            <Text fill="white" layoutX="140.0" layoutY="80.0" text="Salary">
+            <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="150" layoutX="10" layoutY="50" width="333"/>
+            <Text fill="white" layoutX="70.0" layoutY="80.0" text="Emergency Fund" textAlignment="CENTER">
                 <font>
                     <Font size="30" />
                 </font>
             </Text>
-            <TextField fx:id="salaryNum" alignment="CENTER" blendMode="MULTIPLY" layoutX="10.0" layoutY="90.0" prefHeight="65.0" prefWidth="332.0" styleClass="textField">
-                <font>
-                    <Font size="30" />
-                </font>
-            </TextField>
-            <Button alignment="CENTER" layoutX="10" layoutY="155.0" onAction="#calc" prefHeight="40" prefWidth="333" stylesheets="@styleClass.css" text="Confirm">
-                <font>
-                    <Font size="20" />
-                </font>
-            </Button>
-
-            <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="500" layoutX="10" layoutY="250" width="333" />
-            <Text fx:id="showInfo" fill="white" layoutX="11.0" layoutY="282.0" text="placeholder" wrappingWidth="330">
-                <font>
-                    <Font size="30" />
-                </font>
-            </Text>
+            <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="500" layoutX="10" layoutY="250" width="333"/>
         </Pane>
     </center>
-
 </BorderPane>

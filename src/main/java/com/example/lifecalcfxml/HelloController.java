@@ -21,9 +21,9 @@ public class HelloController {
     private Stage stage;
 
     public void calc() {
-        String salaryText = salaryNum.getText();
-        float salary = Integer.parseInt(salaryText);
-        showInfo.setText("Monthly = £" + salary/12f);
+        double salaryText = Double.parseDouble(salaryNum.getText());
+        double roundedMonthly = (double) Math.round(salaryText * 100) / 100;
+        showInfo.setText("Monthly = £" + roundedMonthly);
     }
 
     public void goHome(ActionEvent event) throws IOException {
@@ -37,6 +37,15 @@ public class HelloController {
 
     public void goSalary(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("salaryPage.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void goEmergency(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("emergencyPage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setResizable(false);
         scene = new Scene(root);
