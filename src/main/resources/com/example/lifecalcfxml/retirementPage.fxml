@@ -40,7 +40,7 @@
     <center>
         <Pane stylesheets="@styleClass.css">
             <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="150" layoutX="10" layoutY="50" width="333" />
-            <Text fill="white" layoutX="66.0" layoutY="82.0" text="Emergency Fund" textAlignment="CENTER">
+            <Text fill="white" layoutX="103.0" layoutY="82.0" text="Retirement" textAlignment="CENTER">
                 <font>
                     <Font size="30" />
                 </font>

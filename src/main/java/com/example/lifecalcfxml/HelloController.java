@@ -61,4 +61,13 @@ public class HelloController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void goRetirement(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("retirementPage.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setResizable(false);
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

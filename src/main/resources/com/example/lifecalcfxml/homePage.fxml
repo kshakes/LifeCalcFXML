@@ -9,28 +9,28 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.HelloController" prefWidth="500" prefHeight="800">
+<BorderPane prefHeight="800" prefWidth="500" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.HelloController">
     <left>
         <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #272932;" stylesheets="@styleClass.css">
             <padding>
                 <Insets bottom="50" />
             </padding>
-            <Button maxWidth="Infinity" styleClass="button" text="Home" onAction="#goHome">
+            <Button maxWidth="Infinity" onAction="#goHome" styleClass="button" text="Home">
                 <font>
                     <Font name="Times New Roman" size="25" />
                 </font>
             </Button>
-            <Button maxWidth="Infinity" styleClass="button" text="Salary" onAction="#goSalary">
+            <Button maxWidth="Infinity" onAction="#goSalary" styleClass="button" text="Salary">
                 <font>
                     <Font name="Times New Roman" size="25" />
                 </font>
             </Button>
-            <Button maxWidth="Infinity" styleClass="button" text="Emergency" onAction="#goEmergency">
+            <Button maxWidth="Infinity" onAction="#goEmergency" styleClass="button" text="Emergency">
                 <font>
                     <Font name="Times New Roman" size="25" />
                 </font>
             </Button>
-            <Button maxWidth="Infinity" styleClass="button" text="Retirement">
+            <Button maxWidth="Infinity" onAction="#goRetirement" styleClass="button" text="Retirement">
                 <font>
                     <Font name="Times New Roman" size="25" />
                 </font>
@@ -39,34 +39,34 @@
     </left>
     <center>
         <Pane stylesheets="@styleClass.css">
-            <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="150" layoutX="10" layoutY="50" width="333"/>
-            <Text fill="white" layoutX="140.0" layoutY="80.0" text="Home">
+            <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="150" layoutX="10" layoutY="50" width="333" />
+            <Text fill="white" layoutX="136.0" layoutY="82.0" text="Home">
                 <font>
                     <Font size="30" />
                 </font>
             </Text>
-            <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="500" layoutX="10" layoutY="250" width="333"/>
-            <Text fill="white" layoutX="11.0" layoutY="282.0" text="Welcome to the Life Calculator" wrappingWidth="330" textAlignment="CENTER">
+            <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="500" layoutX="10" layoutY="250" width="333" />
+            <Text fill="white" layoutX="11.0" layoutY="282.0" text="Welcome to the Life Calculator" textAlignment="CENTER" wrappingWidth="330">
                 <font>
                     <Font size="30" />
                 </font>
             </Text>
-            <Text fill="white" layoutX="20.0" layoutY="400.0" text="This aims to:" wrappingWidth="330" textAlignment="LEFT">
+            <Text fill="white" layoutX="20.0" layoutY="400.0" text="This aims to:" textAlignment="LEFT" wrappingWidth="330">
                 <font>
                     <Font size="30" />
                 </font>
             </Text>
-            <Text fill="white" layoutX="20.0" layoutY="440.0" text="Help visualise salaries" wrappingWidth="330" textAlignment="CENTER">
+            <Text fill="white" layoutX="20.0" layoutY="440.0" text="Help visualise salaries" textAlignment="CENTER" wrappingWidth="330">
                 <font>
                     <Font size="25" />
                 </font>
             </Text>
-            <Text fill="white" layoutX="20.0" layoutY="480.0" text="Help Budget" wrappingWidth="330" textAlignment="CENTER">
+            <Text fill="white" layoutX="20.0" layoutY="480.0" text="Help Budget" textAlignment="CENTER" wrappingWidth="330">
                 <font>
                     <Font size="25" />
                 </font>
             </Text>
-            <Text fill="white" layoutX="20.0" layoutY="520.0" text="Create Emergency Funds" wrappingWidth="330" textAlignment="CENTER">
+            <Text fill="white" layoutX="20.0" layoutY="520.0" text="Create Emergency Funds" textAlignment="CENTER" wrappingWidth="330">
                 <font>
                     <Font size="25" />
                 </font>

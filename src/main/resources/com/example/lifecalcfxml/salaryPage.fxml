@@ -10,28 +10,28 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.HelloController" prefWidth="500" prefHeight="800">
+<BorderPane prefHeight="800" prefWidth="500" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.HelloController">
     <left>
         <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #272932;" stylesheets="@styleClass.css">
             <padding>
                 <Insets bottom="50" />
             </padding>
-            <Button maxWidth="Infinity" styleClass="button" text="Home" onAction="#goHome">
+            <Button maxWidth="Infinity" onAction="#goHome" styleClass="button" text="Home">
                 <font>
                     <Font name="Times New Roman" size="25" />
                 </font>
             </Button>
-            <Button maxWidth="Infinity" styleClass="button" text="Salary" onAction="#goSalary">
+            <Button maxWidth="Infinity" onAction="#goSalary" styleClass="button" text="Salary">
                 <font>
                     <Font name="Times New Roman" size="25" />
                 </font>
             </Button>
-            <Button maxWidth="Infinity" styleClass="button" text="Emergency" onAction="#goEmergency">
+            <Button maxWidth="Infinity" onAction="#goEmergency" styleClass="button" text="Emergency">
                 <font>
                     <Font name="Times New Roman" size="25" />
                 </font>
             </Button>
-            <Button maxWidth="Infinity" styleClass="button" text="Retirement">
+            <Button maxWidth="Infinity" onAction="#goRetirement" styleClass="button" text="Retirement">
                 <font>
                     <Font name="Times New Roman" size="25" />
                 </font>
@@ -41,7 +41,7 @@
     <center>
         <Pane stylesheets="@styleClass.css">
             <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="150" layoutX="10" layoutY="50" width="333" />
-            <Text fill="white" layoutX="140.0" layoutY="80.0" text="Salary">
+            <Text fill="white" layoutX="137.0" layoutY="82.0" text="Salary">
                 <font>
                     <Font size="30" />
                 </font>
