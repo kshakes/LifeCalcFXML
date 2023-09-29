@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import java.io.IOException;
+import java.util.InputMismatchException;
+
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -21,9 +23,16 @@ public class HelloController {
     private Stage stage;
 
     public void calc() {
-        double salaryText = Double.parseDouble(salaryNum.getText());
-        double roundedMonthly = (double) Math.round(salaryText * 100) / 100;
-        showInfo.setText("Monthly = £" + roundedMonthly);
+        if (!salaryNum.getText().equals("")){
+            try{
+                double salaryText = Double.parseDouble(salaryNum.getText());
+                double roundedMonthly = (double) Math.round((salaryText / 12) * 100) / 100;
+                showInfo.setText("Monthly = £" + roundedMonthly);
+            } catch (NumberFormatException e){
+                System.out.println(e);
+            }
+        }
+
     }
 
     public void goHome(ActionEvent event) throws IOException {
