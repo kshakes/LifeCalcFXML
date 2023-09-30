@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
@@ -13,29 +11,7 @@
 <BorderPane prefHeight="800" prefWidth="500" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.HelloController">
     <left>
         <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #272932;" stylesheets="@styleClass.css">
-            <padding>
-                <Insets bottom="50" />
-            </padding>
-            <Button maxWidth="Infinity" onAction="#goHome" styleClass="button" text="Home">
-                <font>
-                    <Font name="Times New Roman" size="25" />
-                </font>
-            </Button>
-            <Button maxWidth="Infinity" onAction="#goSalary" styleClass="button" text="Salary">
-                <font>
-                    <Font name="Times New Roman" size="25" />
-                </font>
-            </Button>
-            <Button maxWidth="Infinity" onAction="#goEmergency" styleClass="button" text="Emergency">
-                <font>
-                    <Font name="Times New Roman" size="25" />
-                </font>
-            </Button>
-            <Button maxWidth="Infinity" onAction="#goRetirement" styleClass="button" text="Retirement">
-                <font>
-                    <Font name="Times New Roman" size="25" />
-                </font>
-            </Button>
+            <fx:include source="menuButtons.fxml"/>
         </VBox>
     </left>
     <center>
