@@ -16,10 +16,18 @@ public class HelloController {
         if (!salaryNum.getText().equals("")){
             try{
                 double salaryText = Double.parseDouble(salaryNum.getText());
+//              //Set the variables
                 mm.setmonthly(salaryText);
-                showInfo.setText("Monthly = £" + mm.getmonthly());
+                mm.setCarBudget();
+                mm.setHouseCost();
+                mm.setInvestmentAmount();
+
+                showInfo.setVisible(true);
+                showInfo.setText("Monthly = £" + mm.getmonthly() + "\n\nHouse Budget: £" +
+                        mm.getHouseCost() + "\n\nCar Budget: £" + mm.getCarBudget() +
+                        "\n\nInvestment Amount: £" + mm.getInvestmentAmount());
             } catch (NumberFormatException e){
-                System.out.println(e);
+                throw e;
             }
         }
     }
