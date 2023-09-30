@@ -1,6 +1,7 @@
 package com.example.lifecalcfxml;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import java.text.DecimalFormat;
@@ -10,6 +11,8 @@ public class HelloController {
     private TextField salaryNum;
     @FXML
     private Text showInfo;
+    @FXML
+    private Button editDetailsButton;
 
     static MoneyManager mm = new MoneyManager();
 
@@ -34,6 +37,8 @@ public class HelloController {
                 setVars();
 
                 showInfo.setVisible(true);
+                editDetailsButton.setVisible(true);
+
                 showInfo.setText("Monthly = £" + mm.getmonthly() + "\n\nHouse Budget: £" +
                         mm.getHouseCost() + "\n\nCar Budget: £" + mm.getCarBudget() +
                         "\n\nInvestment Amount: £" + mm.getInvestmentAmount() +

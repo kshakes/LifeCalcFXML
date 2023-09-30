@@ -38,7 +38,7 @@
                     <Font size="20" />
                 </font>
             </Text>
-            <Button text="Edit Details" layoutY="675" layoutX="10" prefHeight="40" prefWidth="333">
+            <Button fx:id="editDetailsButton" text="Edit Details" layoutY="675" layoutX="10" prefHeight="40" prefWidth="333" visible="false">
                 <font>
                     <Font size="30"/>
                 </font>
