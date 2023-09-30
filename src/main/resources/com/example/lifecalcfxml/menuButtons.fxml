@@ -8,11 +8,9 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.lifecalcfxml.MenuButtons"
       alignment="CENTER" spacing="20" style="-fx-background-color: #272932;" stylesheets="@styleClass.css">
-
     <padding>
         <Insets bottom="50"/>
     </padding>
-
     <Button maxWidth="Infinity" onAction="#goHome" styleClass="button" text="Home">
         <font>
             <Font name="Times New Roman" size="25" />
