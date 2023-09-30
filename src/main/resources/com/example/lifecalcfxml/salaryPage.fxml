@@ -4,7 +4,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.*?>
 
 <BorderPane prefHeight="800" prefWidth="500" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.HelloController">
@@ -26,7 +25,7 @@
                     <Font size="30" />
                 </font>
             </TextField>
-            <Button alignment="CENTER" layoutX="10" layoutY="155.0" onAction="#calc" prefHeight="40" prefWidth="333" stylesheets="@styleClass.css" text="Confirm">
+            <Button alignment="CENTER" layoutX="10" layoutY="155.0" onAction="#calc" prefHeight="40" prefWidth="333" text="Confirm">
                 <font>
                     <Font size="20" />
                 </font>
@@ -38,10 +37,12 @@
                 <font>
                     <Font size="20" />
                 </font>
-                <BorderPane.margin>
-                    <Insets top="30"/>
-                </BorderPane.margin>
             </Text>
+            <Button text="Edit Details" layoutY="675" layoutX="10" prefHeight="40" prefWidth="333">
+                <font>
+                    <Font size="30"/>
+                </font>
+            </Button>
         </Pane>
     </center>
 

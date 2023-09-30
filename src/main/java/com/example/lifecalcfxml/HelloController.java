@@ -3,7 +3,6 @@ package com.example.lifecalcfxml;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
 public class HelloController {
@@ -19,10 +18,10 @@ public class HelloController {
     private double houseBudget;
     private double investmentAmount;
 
-    private static DecimalFormat df = new DecimalFormat("0.00");
+    private static final DecimalFormat df = new DecimalFormat("0.00");
 
     public void calc() {
-        if (!salaryNum.getText().equals("")){
+        if (!salaryNum.getText().isEmpty()){
             try{
                 double salaryText = Double.parseDouble(salaryNum.getText());
 
@@ -33,8 +32,6 @@ public class HelloController {
                 mm.setInvestmentAmount();
 
                 setVars();
-
-
 
                 showInfo.setVisible(true);
                 showInfo.setText("Monthly = £" + mm.getmonthly() + "\n\nHouse Budget: £" +
