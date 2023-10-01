@@ -101,6 +101,9 @@ public class SalaryController {
 
 
     public void editDetailsConfirm() {
-
+        if (carBudgetField)
+            //CHECK IF CAR OR HOUSE FIELD ARE EMPTY
+            //IF ONE OF THEM IS, LEAVE THE VALUE AS IS
+            //ELSE, EDIT IT TO WHATEVER IS IN BOX
     }
 }

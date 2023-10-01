@@ -46,32 +46,29 @@
                     <Font size="30" />
                 </font>
             </Button>
-            <GridPane fx:id="editDetailsPane" layoutX="14.0" layoutY="661.0" prefHeight="72.0" prefWidth="327.0" visible="false" stylesheets="@styleClass.css">
+            <GridPane fx:id="editDetailsPane" layoutX="14.0" layoutY="641.0" prefHeight="107.0" prefWidth="327.0" stylesheets="@styleClass.css">
                 <Text text="Car Budget: ">
                     <font>
-                        <Font size="25"/>
+                        <Font size="25" />
                     </font>
                 </Text>
-                <TextField fx:id="carBudgetField" alignment="BOTTOM_CENTER" blendMode="MULTIPLY"
-                           prefHeight="44.0" prefWidth="195.0"
-                           GridPane.columnIndex="1">
+                <TextField fx:id="carBudgetField" alignment="BOTTOM_CENTER" blendMode="MULTIPLY" prefHeight="44.0" prefWidth="195.0" GridPane.columnIndex="1">
                     <font>
-                        <Font size="20.0"/>
+                        <Font size="20.0" />
                     </font>
                 </TextField>
 
                 <Text text="House Budget: " GridPane.rowIndex="1">
                     <font>
-                        <Font size="25"/>
+                        <Font size="25" />
                     </font>
                 </Text>
-                <TextField fx:id="houseBudgetField" alignment="BOTTOM_CENTER" blendMode="MULTIPLY"
-                           prefHeight="0.0" prefWidth="164.0"
-                           GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <TextField fx:id="houseBudgetField" alignment="BOTTOM_CENTER" blendMode="MULTIPLY" prefHeight="0.0" prefWidth="164.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <font>
-                        <Font size="20.0"/>
+                        <Font size="20.0" />
                     </font>
                 </TextField>
+                <Button prefHeight="25.0" prefWidth="100.0" text="Button" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" onAction="#editDetailsConfirm"/>
             </GridPane>
         </Pane>
     </center>
