@@ -4,7 +4,7 @@ public class MoneyManager {
 
     //Monthly living variables
     private double monthly;
-    private double houseCost;
+    private double houseBudget;
     private double investmentAmount;
 
     //Car Variables
@@ -15,10 +15,6 @@ public class MoneyManager {
 
     }
 
-    public MoneyManager(double houseCost, double carBudget) {
-        this.houseCost = houseCost;
-        this.carBudget = carBudget;
-    }
 
     public double getmonthly() {
         return monthly;
@@ -27,12 +23,12 @@ public class MoneyManager {
         this.monthly = (double) Math.round((salary / 12) * 100) / 100;
     }
 
-    public double getHouseCost() {
-        return houseCost;
+    public double getHouseBudget() {
+        return houseBudget;
     }
 
-    public void setHouseCost() {
-        this.houseCost = (double) Math.round((monthly * 0.45) * 100) / 100;
+    public void setHouseBudget() {
+        this.houseBudget = (double) Math.round((monthly * 0.45) * 100) / 100;
     }
 
     public double getInvestmentAmount() {
@@ -57,5 +53,13 @@ public class MoneyManager {
 
     public void setCarBudget() {
         this.carBudget = (double) Math.round((monthly * 0.15) * 100) / 100;
+    }
+
+    public void setHouseBudget(double houseBudget) {
+        this.houseBudget = houseBudget;
+    }
+
+    public void setCarBudget(double carBudget) {
+        this.carBudget = carBudget;
     }
 }

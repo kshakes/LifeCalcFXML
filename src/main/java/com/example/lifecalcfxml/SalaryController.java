@@ -2,12 +2,11 @@ package com.example.lifecalcfxml;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -15,15 +14,18 @@ import java.text.DecimalFormat;
 
 public class SalaryController {
     @FXML
+    public GridPane editDetailsPane;
+    @FXML
+    public TextField carBudgetField;
+    @FXML
+    public TextField houseBudgetField;
+
+    @FXML
     private TextField salaryNum;
     @FXML
     private Text showInfo;
     @FXML
     private Button editDetailsButton;
-    @FXML
-    private TextField editDetailsField;
-    @FXML
-    private Text editDetailsText;
 
     static MoneyManager mm = new MoneyManager();
 
@@ -34,24 +36,21 @@ public class SalaryController {
 
     private static final DecimalFormat df = new DecimalFormat("0.00");
 
+    private boolean isEdited = false;
+
     public void calc() {
         if (!salaryNum.getText().isEmpty()){
             try{
                 double salaryText = Double.parseDouble(salaryNum.getText());
-
                 //Set the variables
                 mm.setmonthly(salaryText);
-                mm.setCarBudget();
-                mm.setHouseCost();
-                mm.setInvestmentAmount();
-
                 setVars();
 
                 showInfo.setVisible(true);
                 editDetailsButton.setVisible(true);
 
                 showInfo.setText("Monthly = £" + mm.getmonthly() + "\n\nHouse Budget: £" +
-                        mm.getHouseCost() + "\n\nCar Budget: £" + mm.getCarBudget() +
+                        mm.getHouseBudget() + "\n\nCar Budget: £" + mm.getCarBudget() +
                         "\n\nInvestment Amount: £" + mm.getInvestmentAmount() +
                         "\n\nMoney Left: £" + df.format(monthlyNet - carBudget - houseBudget - investmentAmount));
             } catch (NumberFormatException e){
@@ -61,8 +60,11 @@ public class SalaryController {
     }
 
     public void setVars(){
+        mm.setCarBudget();
+        mm.setHouseBudget();
+        mm.setInvestmentAmount();
         carBudget = mm.getCarBudget();
-        houseBudget = mm.getHouseCost();
+        houseBudget = mm.getHouseBudget();
         investmentAmount = mm.getInvestmentAmount();
         monthlyNet = mm.getmonthly();
     }
@@ -70,31 +72,35 @@ public class SalaryController {
     public void editDetails() {
         //Animation in order to provide a more interactive experience for the user
         TranslateTransition transition = new TranslateTransition(Duration.seconds(0.5), editDetailsButton);
-        transition.setToY(-60);
-        transition.setAutoReverse(true);
-        transition.play();
+        FadeTransition fadeInTransitionField = new FadeTransition(Duration.seconds(1), editDetailsPane);
 
-        editDetailsField.setVisible(true);
-        editDetailsText.setVisible(true);
+        if (!isEdited){
+            editDetailsPane.setVisible(true);
+            transition.setToY(-60);
+            transition.setAutoReverse(true);
+            transition.play();
 
-        //Fades both the TextField and the Text
-        FadeTransition fadeInTransitionField = new FadeTransition(Duration.seconds(1), editDetailsField);
-        fadeInTransitionField.setFromValue(0.0);
-        fadeInTransitionField.setToValue(1.0);
-        fadeInTransitionField.play();
+            //Fades both the TextField and the Text
+            fadeInTransitionField.setFromValue(0.0);
+            fadeInTransitionField.setToValue(1.0);
+            fadeInTransitionField.play();
 
-        FadeTransition fadeInTransitionText = new FadeTransition(Duration.seconds(1), editDetailsText);
-        fadeInTransitionText.setFromValue(0.0);
-        fadeInTransitionText.setToValue(1.0);
-        fadeInTransitionText.play();
+            fadeInTransitionField.setFromValue(0.0);
+            fadeInTransitionField.setToValue(1.0);
+            fadeInTransitionField.play();
+            isEdited = true;
+        }
+        else{
+            transition.setToY(0);
+            transition.play();
+
+            editDetailsPane.setVisible(false);
+            isEdited = false;
+        }
     }
 
-    public void editDetailsConfirm(KeyEvent keyEvent) {
-        MoneyManager mmEdited = new MoneyManager();
-        for (int i = 0; i <= 2; i++)
-            //FINISH LATER
-        if (keyEvent.getCode() == KeyCode.SPACE){
 
-        }
+    public void editDetailsConfirm() {
+
     }
 }

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
@@ -47,25 +46,33 @@
                     <Font size="30" />
                 </font>
             </Button>
-            <HBox layoutY="675">
-                <padding>
-                    <Insets left="20" />
-                </padding>
-                <Text fx:id="editDetailsText" text="Car Budget: " visible="false">
+            <GridPane fx:id="editDetailsPane" layoutX="14.0" layoutY="661.0" prefHeight="72.0" prefWidth="327.0" visible="false" stylesheets="@styleClass.css">
+                <Text text="Car Budget: ">
                     <font>
-                        <Font size="25" />
+                        <Font size="25"/>
                     </font>
                 </Text>
-                <TextField fx:id="editDetailsField" alignment="BOTTOM_CENTER" blendMode="MULTIPLY" prefHeight="25.0"
-                           prefWidth="184.0" styleClass="textField" visible="false" onKeyPressed="#editDetailsConfirm">
-                   <HBox.margin>
-                      <Insets top="-5.0" />
-                   </HBox.margin>
-                   <font>
-                      <Font size="20.0" />
-                   </font>
+                <TextField fx:id="carBudgetField" alignment="BOTTOM_CENTER" blendMode="MULTIPLY"
+                           prefHeight="44.0" prefWidth="195.0"
+                           GridPane.columnIndex="1">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
                 </TextField>
-            </HBox>
+
+                <Text text="House Budget: " GridPane.rowIndex="1">
+                    <font>
+                        <Font size="25"/>
+                    </font>
+                </Text>
+                <TextField fx:id="houseBudgetField" alignment="BOTTOM_CENTER" blendMode="MULTIPLY"
+                           prefHeight="0.0" prefWidth="164.0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </TextField>
+            </GridPane>
         </Pane>
     </center>
 </BorderPane>
