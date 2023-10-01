@@ -1,5 +1,6 @@
 package com.example.lifecalcfxml;
 
+import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +18,10 @@ public class SalaryController {
     private Text showInfo;
     @FXML
     private Button editDetailsButton;
+    @FXML
+    private TextField editDetailsField;
+    @FXML
+    private Text editDetailsText;
 
     static MoneyManager mm = new MoneyManager();
 
@@ -61,9 +66,26 @@ public class SalaryController {
     }
 
     public void editDetails() {
+        //Animation in order to provide a more interactive experience for the user
         TranslateTransition transition = new TranslateTransition(Duration.seconds(0.5), editDetailsButton);
-        transition.setToY(-50);
+        transition.setToY(-60);
         transition.setAutoReverse(true);
         transition.play();
+
+        editDetailsField.setVisible(true);
+        editDetailsText.setVisible(true);
+
+        //Fades both the TextField and the Text
+        FadeTransition fadeInTransitionField = new FadeTransition(Duration.seconds(1), editDetailsField);
+        fadeInTransitionField.setFromValue(0.0);
+        fadeInTransitionField.setToValue(1.0);
+        fadeInTransitionField.play();
+
+        FadeTransition fadeInTransitionText = new FadeTransition(Duration.seconds(1), editDetailsText);
+        fadeInTransitionText.setFromValue(0.0);
+        fadeInTransitionText.setToValue(1.0);
+        fadeInTransitionText.play();
+
+
     }
 }

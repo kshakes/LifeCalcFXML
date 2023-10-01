@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.layout.*?>
 
 <BorderPane prefHeight="800" prefWidth="500" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.SalaryController">
     <left>
         <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #272932;" stylesheets="@styleClass.css">
-            <fx:include source="menuButtons.fxml"/>
+            <fx:include source="menuButtons.fxml" />
         </VBox>
     </left>
     <center>
@@ -32,19 +37,34 @@
             </Button>
 
             <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="500" layoutX="10" layoutY="250" width="333" />
-            <Text fx:id="showInfo" fill="white" layoutX="11.0"
-                  layoutY="282.0" wrappingWidth="330" visible="false">
+            <Text fx:id="showInfo" fill="white" layoutX="11.0" layoutY="282.0" visible="false" wrappingWidth="330">
                 <font>
                     <Font size="20" />
                 </font>
             </Text>
-            <Button fx:id="editDetailsButton" text="Edit Details" layoutY="675" layoutX="10" prefHeight="40"
-                    prefWidth="333" visible="false" onAction="#editDetails">
+            <Button fx:id="editDetailsButton" layoutX="10" layoutY="675" onAction="#editDetails" prefHeight="40" prefWidth="333" text="Edit Details" visible="false">
                 <font>
-                    <Font size="30"/>
+                    <Font size="30" />
                 </font>
             </Button>
+            <HBox layoutY="675">
+                <padding>
+                    <Insets left="20" />
+                </padding>
+                <Text fx:id="editDetailsText" text="Car Budget: " visible="false">
+                    <font>
+                        <Font size="25" />
+                    </font>
+                </Text>
+                <TextField fx:id="editDetailsField" alignment="BOTTOM_CENTER" blendMode="MULTIPLY" prefHeight="25.0" prefWidth="184.0" styleClass="textField" visible="false">
+                   <HBox.margin>
+                      <Insets top="-5.0" />
+                   </HBox.margin>
+                   <font>
+                      <Font size="20.0" />
+                   </font>
+                </TextField>
+            </HBox>
         </Pane>
     </center>
-
 </BorderPane>
