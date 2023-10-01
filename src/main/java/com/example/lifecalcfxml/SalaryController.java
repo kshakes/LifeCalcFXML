@@ -1,12 +1,16 @@
 package com.example.lifecalcfxml;
 
+import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
+
 import java.text.DecimalFormat;
 
-public class HelloController {
+public class SalaryController {
     @FXML
     private TextField salaryNum;
     @FXML
@@ -54,5 +58,12 @@ public class HelloController {
         houseBudget = mm.getHouseCost();
         investmentAmount = mm.getInvestmentAmount();
         monthlyNet = mm.getmonthly();
+    }
+
+    public void editDetails() {
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(0.5), editDetailsButton);
+        transition.setToY(-50);
+        transition.setAutoReverse(true);
+        transition.play();
     }
 }

@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="800" prefWidth="500" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.HelloController">
+<BorderPane prefHeight="800" prefWidth="500" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.SalaryController">
     <left>
         <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #272932;" stylesheets="@styleClass.css">
             <fx:include source="menuButtons.fxml"/>
@@ -38,7 +38,8 @@
                     <Font size="20" />
                 </font>
             </Text>
-            <Button fx:id="editDetailsButton" text="Edit Details" layoutY="675" layoutX="10" prefHeight="40" prefWidth="333" visible="false">
+            <Button fx:id="editDetailsButton" text="Edit Details" layoutY="675" layoutX="10" prefHeight="40"
+                    prefWidth="333" visible="false" onAction="#editDetails">
                 <font>
                     <Font size="30"/>
                 </font>
