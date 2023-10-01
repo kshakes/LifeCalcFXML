@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -85,7 +87,14 @@ public class SalaryController {
         fadeInTransitionText.setFromValue(0.0);
         fadeInTransitionText.setToValue(1.0);
         fadeInTransitionText.play();
+    }
 
+    public void editDetailsConfirm(KeyEvent keyEvent) {
+        MoneyManager mmEdited = new MoneyManager();
+        for (int i = 0; i <= 2; i++)
+            //FINISH LATER
+        if (keyEvent.getCode() == KeyCode.SPACE){
 
+        }
     }
 }

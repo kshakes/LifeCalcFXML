@@ -56,7 +56,8 @@
                         <Font size="25" />
                     </font>
                 </Text>
-                <TextField fx:id="editDetailsField" alignment="BOTTOM_CENTER" blendMode="MULTIPLY" prefHeight="25.0" prefWidth="184.0" styleClass="textField" visible="false">
+                <TextField fx:id="editDetailsField" alignment="BOTTOM_CENTER" blendMode="MULTIPLY" prefHeight="25.0"
+                           prefWidth="184.0" styleClass="textField" visible="false" onKeyPressed="#editDetailsConfirm">
                    <HBox.margin>
                       <Insets top="-5.0" />
                    </HBox.margin>

@@ -14,6 +14,12 @@ public class MoneyManager {
     public MoneyManager() {
 
     }
+
+    public MoneyManager(double houseCost, double carBudget) {
+        this.houseCost = houseCost;
+        this.carBudget = carBudget;
+    }
+
     public double getmonthly() {
         return monthly;
     }
