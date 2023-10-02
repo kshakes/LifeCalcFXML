@@ -6,7 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.GridPane;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -14,11 +15,11 @@ import java.text.DecimalFormat;
 
 public class SalaryController {
     @FXML
-    public GridPane editDetailsPane;
+    private HBox editFieldHBox;
     @FXML
-    public TextField carBudgetField;
+    private TextField budgetTypeField;
     @FXML
-    public TextField houseBudgetField;
+    private Text budgetTypeText;
 
     @FXML
     private TextField salaryNum;
@@ -41,13 +42,14 @@ public class SalaryController {
     public void calc() {
         if (!salaryNum.getText().isEmpty()){
             try{
-                double salaryText = Double.parseDouble(salaryNum.getText());
-                //Set the variables
-                mm.setmonthly(salaryText);
-                setVars();
-
-                showInfo.setVisible(true);
-                editDetailsButton.setVisible(true);
+                if (!isEdited){
+                    double salaryText = Double.parseDouble(salaryNum.getText());
+                    //Set the variables
+                    mm.setmonthly(salaryText);
+                    setVars();
+                    showInfo.setVisible(true);
+                    editDetailsButton.setVisible(true);
+                }
 
                 showInfo.setText("Monthly = £" + mm.getmonthly() + "\n\nHouse Budget: £" +
                         mm.getHouseBudget() + "\n\nCar Budget: £" + mm.getCarBudget() +
@@ -72,10 +74,9 @@ public class SalaryController {
     public void editDetails() {
         //Animation in order to provide a more interactive experience for the user
         TranslateTransition transition = new TranslateTransition(Duration.seconds(0.5), editDetailsButton);
-        FadeTransition fadeInTransitionField = new FadeTransition(Duration.seconds(1), editDetailsPane);
+        FadeTransition fadeInTransitionField = new FadeTransition(Duration.seconds(1), editFieldHBox);
 
         if (!isEdited){
-            editDetailsPane.setVisible(true);
             transition.setToY(-60);
             transition.setAutoReverse(true);
             transition.play();
@@ -88,22 +89,39 @@ public class SalaryController {
             fadeInTransitionField.setFromValue(0.0);
             fadeInTransitionField.setToValue(1.0);
             fadeInTransitionField.play();
+            editFieldHBox.setVisible(true);
             isEdited = true;
         }
         else{
             transition.setToY(0);
             transition.play();
 
-            editDetailsPane.setVisible(false);
+            editFieldHBox.setVisible(false);
             isEdited = false;
         }
     }
+    public void editDetailsConfirm(KeyEvent key) {
+        try{
+            if (key.getCode() == KeyCode.ENTER){
+                String checkText = budgetTypeText.getText();
+                if (checkText.contains("Car Budget:")){
+                    carBudget = Double.parseDouble(budgetTypeField.getText());
+                    System.out.println("Car Budget: " + carBudget);
+                    budgetTypeText.setText("House Budget:");
+                    isEdited = true;
+                }
+                else{
+                    houseBudget = Double.parseDouble(budgetTypeField.getText());
+                    System.out.println("House Budget: " + houseBudget);
+                    budgetTypeText.setText("Car Budget:");
+                    calc();
+                    editDetails();
+                }
+            }
+        } catch (IllegalArgumentException e){
+            System.out.println(e);
+        }
 
 
-    public void editDetailsConfirm() {
-        if (carBudgetField)
-            //CHECK IF CAR OR HOUSE FIELD ARE EMPTY
-            //IF ONE OF THEM IS, LEAVE THE VALUE AS IS
-            //ELSE, EDIT IT TO WHATEVER IS IN BOX
     }
 }
