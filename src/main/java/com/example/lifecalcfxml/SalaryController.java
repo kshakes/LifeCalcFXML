@@ -62,13 +62,16 @@ public class SalaryController {
     }
 
     public void setVars(){
-        mm.setCarBudget();
-        mm.setHouseBudget();
+        if (!isEdited){
+            mm.setCarBudget();
+            mm.setHouseBudget();
+        }
         mm.setInvestmentAmount();
         carBudget = mm.getCarBudget();
         houseBudget = mm.getHouseBudget();
         investmentAmount = mm.getInvestmentAmount();
         monthlyNet = mm.getmonthly();
+
     }
 
     public void editDetails() {
@@ -77,7 +80,7 @@ public class SalaryController {
         FadeTransition fadeInTransitionField = new FadeTransition(Duration.seconds(1), editFieldHBox);
 
         if (!isEdited){
-            transition.setToY(-60);
+            transition.setToY(-30);
             transition.setAutoReverse(true);
             transition.play();
 
@@ -90,7 +93,6 @@ public class SalaryController {
             fadeInTransitionField.setToValue(1.0);
             fadeInTransitionField.play();
             editFieldHBox.setVisible(true);
-            isEdited = true;
         }
         else{
             transition.setToY(0);
@@ -106,13 +108,13 @@ public class SalaryController {
                 String checkText = budgetTypeText.getText();
                 if (checkText.contains("Car Budget:")){
                     carBudget = Double.parseDouble(budgetTypeField.getText());
-                    System.out.println("Car Budget: " + carBudget);
+                    mm.setCarBudget(carBudget);
                     budgetTypeText.setText("House Budget:");
                     isEdited = true;
                 }
                 else{
                     houseBudget = Double.parseDouble(budgetTypeField.getText());
-                    System.out.println("House Budget: " + houseBudget);
+                    mm.setHouseBudget(houseBudget);
                     budgetTypeText.setText("Car Budget:");
                     calc();
                     editDetails();
