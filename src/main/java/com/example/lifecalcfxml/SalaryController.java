@@ -36,6 +36,9 @@ public class SalaryController {
     private double carBudget;
     private double houseBudget;
     private double investmentAmount;
+    //Helps with the emergency fund!
+    private double moneyLeft;
+
     //Helps with formatting and not having .000000000000
     private static final DecimalFormat df = new DecimalFormat("0.00");
     //Key with determining whether the carBudget/houseBudget input field should be visible and determines
@@ -62,10 +65,11 @@ public class SalaryController {
                     editDetailsButton.setVisible(true);
                 }
                 fadeInTransitionField.play();
+
                 showInfo.setText("Monthly = £" + mm.getmonthly() + "\n\nHouse Budget: £" +
                         mm.getHouseBudget() + "\n\nCar Budget: £" + mm.getCarBudget() +
                         "\n\nInvestment Amount: £" + mm.getInvestmentAmount() +
-                        "\n\nMoney Left: £" + df.format(monthlyNet - carBudget - houseBudget - investmentAmount));
+                        "\n\nMoney Left: £" + moneyLeft);
             } catch (NumberFormatException e){ //Make sure there is only numbers input
                 System.out.println(e);
             }
@@ -78,10 +82,12 @@ public class SalaryController {
             mm.setHouseBudget();
         }
         mm.setInvestmentAmount();
+        mm.setMoneyLeft();
         carBudget = mm.getCarBudget();
         houseBudget = mm.getHouseBudget();
         investmentAmount = mm.getInvestmentAmount();
         monthlyNet = mm.getmonthly();
+        moneyLeft = mm.getMoneyLeft();
 
     }
 

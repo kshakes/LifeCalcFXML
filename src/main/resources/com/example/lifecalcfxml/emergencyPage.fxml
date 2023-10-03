@@ -47,8 +47,8 @@
 
             <ScrollPane blendMode="MULTIPLY" layoutX="11.0" layoutY="257.0" prefHeight="487.0" prefWidth="331.0">
                 <AnchorPane blendMode="MULTIPLY" prefHeight="484.0" prefWidth="331.0">
-                    <Text fx:id="showEmergencyFund" layoutX="3.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text"
-                          wrappingWidth="324.1181640625">
+                    <Text fx:id="showEmergencyFund" layoutX="3.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                          wrappingWidth="324">
                         <font>
                             <Font size="25.0"/>
                         </font>

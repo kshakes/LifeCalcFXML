@@ -7,6 +7,8 @@ public class MoneyManager {
     private double houseBudget;
     private double investmentAmount;
 
+    private double moneyLeft;
+
     //Car Variables
     private double carPrice;
     private double carBudget;
@@ -60,5 +62,13 @@ public class MoneyManager {
 
     public void setCarBudget(double carBudget) {
         this.carBudget = carBudget;
+    }
+
+    public double getMoneyLeft() {
+        return moneyLeft;
+    }
+
+    public void setMoneyLeft() {
+        this.moneyLeft = monthly - (carBudget + houseBudget + investmentAmount);
     }
 }
