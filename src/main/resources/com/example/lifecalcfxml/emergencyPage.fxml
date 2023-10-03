@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -6,10 +10,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="800" prefWidth="500" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.SalaryController">
+<?import javafx.scene.control.Button?>
+<BorderPane prefHeight="800" prefWidth="500" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.emergencyController">
     <left>
         <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #272932;" stylesheets="@styleClass.css">
-            <fx:include source="menuButtons.fxml"/>
+            <fx:include source="menuButtons.fxml" />
         </VBox>
     </left>
     <center>
@@ -20,7 +25,37 @@
                     <Font size="30" />
                 </font>
             </Text>
+
+         <Text fill="WHITE" layoutX="66.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Months:">
+            <font>
+               <Font size="30.0" />
+            </font>
+         </Text>
+            <TextField fx:id="numOfMonthsField" alignment="CENTER" blendMode="MULTIPLY" layoutX="176.0" layoutY="89.0" prefHeight="65.0" prefWidth="147.0" styleClass="textField">
+                <font>
+                    <Font size="30" />
+                </font>
+            </TextField>
+
+            <Button alignment="CENTER" layoutX="10" layoutY="155.0" onAction="#calcEmergencyFund" prefHeight="40" prefWidth="333" text="Calculate">
+                <font>
+                    <Font size="20" />
+                </font>
+            </Button>
+
             <Rectangle arcHeight="20" arcWidth="20" fill="#B6C2D9" height="500" layoutX="10" layoutY="250" width="333" />
+
+            <ScrollPane blendMode="MULTIPLY" layoutX="11.0" layoutY="257.0" prefHeight="487.0" prefWidth="331.0">
+                <AnchorPane blendMode="MULTIPLY" prefHeight="484.0" prefWidth="331.0">
+                    <Text fx:id="showEmergencyFund" layoutX="3.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text"
+                          wrappingWidth="324.1181640625">
+                        <font>
+                            <Font size="25.0"/>
+                        </font>
+                    </Text>
+
+                </AnchorPane>
+            </ScrollPane>
         </Pane>
     </center>
 </BorderPane>
