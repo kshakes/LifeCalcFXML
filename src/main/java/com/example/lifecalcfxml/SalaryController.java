@@ -10,7 +10,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-
 import java.text.DecimalFormat;
 
 public class SalaryController {
@@ -36,8 +35,6 @@ public class SalaryController {
     private double carBudget;
     private double houseBudget;
     private double investmentAmount;
-    //Helps with the emergency fund!
-    private double moneyLeft;
 
     //Helps with formatting and not having .000000000000
     private static final DecimalFormat df = new DecimalFormat("0.00");
@@ -46,6 +43,10 @@ public class SalaryController {
     private boolean isEdited = false;
 
     public void calc() {
+
+        //Implement a script that makes the emergency fund button and the retirement fund button
+        //visible when the user enters this part of the program
+
         //Animation settings to fade the showInfo. Creates a smoother UI and better user experience
         FadeTransition fadeInTransitionField = new FadeTransition(Duration.seconds(0.5), showInfo);
         fadeInTransitionField.setFromValue(0.0);
@@ -69,7 +70,7 @@ public class SalaryController {
                 showInfo.setText("Monthly = £" + mm.getmonthly() + "\n\nHouse Budget: £" +
                         mm.getHouseBudget() + "\n\nCar Budget: £" + mm.getCarBudget() +
                         "\n\nInvestment Amount: £" + mm.getInvestmentAmount() +
-                        "\n\nMoney Left: £" + moneyLeft);
+                        "\n\nMoney Left: £" + df.format(monthlyNet - carBudget - houseBudget - investmentAmount));
             } catch (NumberFormatException e){ //Make sure there is only numbers input
                 System.out.println(e);
             }
@@ -82,13 +83,10 @@ public class SalaryController {
             mm.setHouseBudget();
         }
         mm.setInvestmentAmount();
-        mm.setMoneyLeft();
         carBudget = mm.getCarBudget();
         houseBudget = mm.getHouseBudget();
         investmentAmount = mm.getInvestmentAmount();
         monthlyNet = mm.getmonthly();
-        moneyLeft = mm.getMoneyLeft();
-
     }
 
     public void editDetails() {
@@ -124,7 +122,7 @@ public class SalaryController {
             if (key.getCode() == KeyCode.ENTER){ // If the user clicks the Enter key
                 String checkText = budgetTypeText.getText(); // Get whatever is in the box (ints only)
                 //In order for this section to work, I figured the easiest way is to check that the text = the section you edit
-                //and then change it once it's edited. I found it alot easier to track when things are edited and the code
+                //and then change it once it's edited. I found it a lot easier to track when things are edited and the code
                 //is readable
                 if (checkText.contains("Car Budget:")){
                     carBudget = Double.parseDouble(budgetTypeField.getText());

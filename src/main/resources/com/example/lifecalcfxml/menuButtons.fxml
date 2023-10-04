@@ -21,14 +21,16 @@
             <Font name="Times New Roman" size="25" />
         </font>
     </Button>
-    <Button maxWidth="Infinity" onAction="#goEmergency" styleClass="button" text="Emergency">
+
+    <Button fx:id="emergencyButton" maxWidth="Infinity" onAction="#goEmergency" styleClass="button" text="Emergency" visible="false">
         <font>
             <Font name="Times New Roman" size="25" />
         </font>
     </Button>
-    <Button maxWidth="Infinity" onAction="#goRetirement" styleClass="button" text="Retirement">
+    <Button fx:id="retirementButton" maxWidth="Infinity" onAction="#goRetirement" styleClass="button" text="Retirement" visible="false">
         <font>
             <Font name="Times New Roman" size="25" />
         </font>
     </Button>
+
 </VBox>
