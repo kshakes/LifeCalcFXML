@@ -90,8 +90,8 @@ public class SalaryController {
         carBudget = mm.getCarBudget();
         houseBudget = mm.getHouseBudget();
         investmentAmount = mm.getInvestmentAmount();
-        moneyLeft = monthlyNet - (carBudget + houseBudget + investmentAmount);
         expenses = carBudget + houseBudget + investmentAmount;
+        moneyLeft = monthlyNet - (carBudget + houseBudget + investmentAmount);
     }
 
     public void editDetails() {

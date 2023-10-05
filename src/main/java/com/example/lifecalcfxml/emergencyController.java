@@ -10,16 +10,25 @@ public class emergencyController {
     @FXML
     private TextField numOfMonthsField;
 
-    static SalaryController sC = new SalaryController();
-
-    private final double spareMoney = SalaryController.moneyLeft;
-    private final double expenses = SalaryController.expenses;
+    private double spareMoney = SalaryController.moneyLeft + SalaryController.investmentAmount; // Money left after expenses (No investing during emergency fund creation)
+    private double expenses = SalaryController.expenses;
 
     public void calcEmergencyFund() {
 
         //Removed the code while I try and fix issues with it
         int months = Integer.parseInt(numOfMonthsField.getText());
-        System.out.println(spareMoney * months);
+        int currentMonth = 0;
+        double goal = (expenses-SalaryController.investmentAmount) * months;
+        double currentSaved = 0;
+
+        showEmergencyFund.setText("Goal: £" + goal + "\n");
+
+        while (currentSaved <= goal){
+            currentSaved += spareMoney;
+            currentMonth++;
+            showEmergencyFund.setText(showEmergencyFund.getText() + "\nMonth " + currentMonth + ": £" + currentSaved);
+
+        }
 
     }
 }
