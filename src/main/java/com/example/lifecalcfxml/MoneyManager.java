@@ -10,6 +10,7 @@ public class MoneyManager {
     private double carPrice;
     private double carBudget;
 
+
     public MoneyManager() {
     }
 
@@ -59,5 +60,4 @@ public class MoneyManager {
     public void setCarBudget(double carBudget) {
         this.carBudget = carBudget;
     }
-
 }

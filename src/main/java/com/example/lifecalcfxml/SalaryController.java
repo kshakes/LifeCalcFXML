@@ -35,6 +35,8 @@ public class SalaryController {
     private double carBudget;
     private double houseBudget;
     private double investmentAmount;
+    //public double moneyLeft = monthlyNet - carBudget - houseBudget - investmentAmount;
+    static double moneyLeft;
 
     //Helps with formatting and not having .000000000000
     private static final DecimalFormat df = new DecimalFormat("0.00");
@@ -82,11 +84,13 @@ public class SalaryController {
             mm.setCarBudget();
             mm.setHouseBudget();
         }
+        monthlyNet = mm.getmonthly();
         mm.setInvestmentAmount();
         carBudget = mm.getCarBudget();
         houseBudget = mm.getHouseBudget();
         investmentAmount = mm.getInvestmentAmount();
-        monthlyNet = mm.getmonthly();
+        moneyLeft = monthlyNet - (carBudget + houseBudget + investmentAmount);
+
     }
 
     public void editDetails() {
@@ -135,6 +139,7 @@ public class SalaryController {
                     houseBudget = Double.parseDouble(budgetTypeField.getText());
                     mm.setHouseBudget(houseBudget);
                     budgetTypeText.setText("Car Budget:");
+                    budgetTypeField.clear(); //Clear it so the user doesn't have to remove their previous input
                     calc();
                     editDetails();
                 }

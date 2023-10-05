@@ -10,9 +10,12 @@ public class emergencyController {
     @FXML
     private TextField numOfMonthsField;
 
+    static SalaryController sC = new SalaryController();
+
     public void calcEmergencyFund() {
 
         //Removed the code while i try and fix issues with it
+        System.out.println(sC.moneyLeft);
 
     }
 }

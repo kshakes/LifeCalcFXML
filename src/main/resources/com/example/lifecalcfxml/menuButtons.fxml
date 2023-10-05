@@ -22,12 +22,12 @@
         </font>
     </Button>
 
-    <Button fx:id="emergencyButton" maxWidth="Infinity" onAction="#goEmergency" styleClass="button" text="Emergency" visible="false">
+    <Button fx:id="emergencyButton" maxWidth="Infinity" onAction="#goEmergency" styleClass="button" text="Emergency">
         <font>
             <Font name="Times New Roman" size="25" />
         </font>
     </Button>
-    <Button fx:id="retirementButton" maxWidth="Infinity" onAction="#goRetirement" styleClass="button" text="Retirement" visible="false">
+    <Button fx:id="retirementButton" maxWidth="Infinity" onAction="#goRetirement" styleClass="button" text="Retirement">
         <font>
             <Font name="Times New Roman" size="25" />
         </font>
