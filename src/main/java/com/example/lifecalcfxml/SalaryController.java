@@ -34,9 +34,10 @@ public class SalaryController {
     private double monthlyNet;
     private double carBudget;
     private double houseBudget;
-    private double investmentAmount;
+    static double investmentAmount;
     //public double moneyLeft = monthlyNet - carBudget - houseBudget - investmentAmount;
     static double moneyLeft;
+    static double expenses;
 
     //Helps with formatting and not having .000000000000
     private static final DecimalFormat df = new DecimalFormat("0.00");
@@ -90,7 +91,7 @@ public class SalaryController {
         houseBudget = mm.getHouseBudget();
         investmentAmount = mm.getInvestmentAmount();
         moneyLeft = monthlyNet - (carBudget + houseBudget + investmentAmount);
-
+        expenses = carBudget + houseBudget + investmentAmount;
     }
 
     public void editDetails() {

@@ -12,10 +12,14 @@ public class emergencyController {
 
     static SalaryController sC = new SalaryController();
 
+    private final double spareMoney = SalaryController.moneyLeft;
+    private final double expenses = SalaryController.expenses;
+
     public void calcEmergencyFund() {
 
-        //Removed the code while i try and fix issues with it
-        System.out.println(sC.moneyLeft);
+        //Removed the code while I try and fix issues with it
+        int months = Integer.parseInt(numOfMonthsField.getText());
+        System.out.println(spareMoney * months);
 
     }
 }
