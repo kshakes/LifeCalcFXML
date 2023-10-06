@@ -26,7 +26,7 @@ public class emergencyController {
         while (currentSaved <= goal){
             currentSaved += spareMoney;
             currentMonth++;
-            showEmergencyFund.setText(showEmergencyFund.getText() + "\nMonth " + currentMonth + ": £" + currentSaved);
+            showEmergencyFund.setText(showEmergencyFund.getText() + "\nMonth " + currentMonth + ": £" + SalaryController.df.format(currentSaved));
 
         }
 

@@ -40,7 +40,7 @@ public class SalaryController {
     static double expenses;
 
     //Helps with formatting and not having .000000000000
-    private static final DecimalFormat df = new DecimalFormat("0.00");
+    public static final DecimalFormat df = new DecimalFormat("0.00");
     //Key with determining whether the carBudget/houseBudget input field should be visible and determines
     //Animations that should be played to put it back to its original state
     private boolean isEdited = false;
