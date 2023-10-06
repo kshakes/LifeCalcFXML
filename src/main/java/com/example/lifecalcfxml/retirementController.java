@@ -1,10 +1,27 @@
 package com.example.lifecalcfxml;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 
-import javafx.event.ActionEvent;
+import java.util.InputMismatchException;
 
 public class retirementController {
 
+    @FXML
+    private TextField ageTextField;
+
+    final int retirementAge = 66;
+
     public void calcRetirement() {
-        System.out.println("Button Works!");
+        try{
+            int userAge = Integer.parseInt((ageTextField.getText()));
+            if (userAge >= 66){
+                System.out.println("You are already at or above the retirement age");
+            }
+            System.out.println(userAge);
+
+        } catch (InputMismatchException e){
+            throw e;
+        }
+
     }
 }

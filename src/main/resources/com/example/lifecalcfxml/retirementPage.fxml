@@ -29,7 +29,7 @@
                <Font size="20.0" />
             </font>
          </Button>
-         <TextField blendMode="MULTIPLY" layoutX="59.0" layoutY="90.0" prefHeight="25.0" prefWidth="234.0" promptText="Input Your Age!" styleClass="textField">
+         <TextField fx:id="ageTextField" alignment="CENTER" blendMode="MULTIPLY" layoutX="59.0" layoutY="90.0" prefHeight="25.0" prefWidth="234.0" promptText="Input Your Age!" styleClass="textField">
             <font>
                <Font size="30.0" />
             </font>
