@@ -1,17 +1,15 @@
 package com.example.lifecalcfxml;
 import javafx.fxml.FXML;
-import javafx.scene.chart.LineChart;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.TextField;
-
-import java.util.ArrayList;
+import javafx.scene.text.Text;
 import java.util.InputMismatchException;
-import java.util.List;
 
 public class retirementController {
 
     @FXML
     private TextField ageTextField;
+    @FXML
+    private Text retirementText;
 
     final double averageReturn = 0.08 / 12;
     double initialBalance = 0;
@@ -32,7 +30,7 @@ public class retirementController {
                     //Do monthly compound interest
                     initialBalance = (initialBalance + SalaryController.investmentAmount) * (1 + averageReturn);
                     if (i % 12 == 0){
-                        System.out.println("Year : " + i / 12 + " -> Balance: " + SalaryController.df.format(initialBalance));
+                        retirementText.setText(retirementText.getText() + "Year : " + i / 12 + " -> Balance: £" + SalaryController.df.format(initialBalance) + "\n");
                     }
                 }
             }
