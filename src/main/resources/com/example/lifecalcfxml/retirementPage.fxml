@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
@@ -31,7 +30,7 @@
          </Button>
          <TextField fx:id="ageTextField" alignment="CENTER" blendMode="MULTIPLY" layoutX="59.0" layoutY="90.0" prefHeight="25.0" prefWidth="234.0" promptText="Input Your Age!" styleClass="textField">
             <font>
-               <Font size="30.0" />
+               <Font size="29.0" />
             </font>
          </TextField>
         </Pane>
