@@ -10,7 +10,6 @@ public class MoneyManager {
     private double carPrice;
     private double carBudget;
 
-
     public MoneyManager() {
     }
 

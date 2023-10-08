@@ -10,7 +10,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class SalaryController {
     //Variables for Edit Details section
@@ -39,8 +40,8 @@ public class SalaryController {
     static double moneyLeft;
     static double expenses;
 
-    //Helps with formatting and not having .000000000000
-    public static final DecimalFormat df = new DecimalFormat("0.00");
+    //Formats the numbers so they are in currency format
+    static NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.UK);
     //Key with determining whether the carBudget/houseBudget input field should be visible and determines
     //Animations that should be played to put it back to its original state
     private boolean isEdited = false;
@@ -70,10 +71,10 @@ public class SalaryController {
                 }
                 fadeInTransitionField.play();
 
-                showInfo.setText("Monthly = £" + mm.getmonthly() + "\n\nHouse Budget: £" +
-                        mm.getHouseBudget() + "\n\nCar Budget: £" + mm.getCarBudget() +
-                        "\n\nInvestment Amount: £" + mm.getInvestmentAmount() +
-                        "\n\nMoney Left: £" + df.format(monthlyNet - carBudget - houseBudget - investmentAmount));
+                showInfo.setText("Monthly = " + currencyFormat.format(monthlyNet) + "\n\nHouse Budget: " +
+                        currencyFormat.format(houseBudget) + "\n\nCar Budget: " + currencyFormat.format(carBudget) +
+                        "\n\nInvestment Amount: " + currencyFormat.format(investmentAmount) +
+                        "\n\nMoney Left: " + currencyFormat.format(monthlyNet - carBudget - houseBudget - investmentAmount));
             } catch (NumberFormatException e){ //Make sure there is only numbers input
                 System.out.println(e);
             }

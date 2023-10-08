@@ -12,7 +12,6 @@ public class emergencyController {
 
     private double spareMoney = SalaryController.moneyLeft + SalaryController.investmentAmount; // Money left after expenses (No investing during emergency fund creation)
     private double expenses = SalaryController.expenses;
-
     public void calcEmergencyFund() {
 
         //Removed the code while I try and fix issues with it
@@ -26,7 +25,7 @@ public class emergencyController {
         while (currentSaved <= goal){
             currentSaved += spareMoney;
             currentMonth++;
-            showEmergencyFund.setText(showEmergencyFund.getText() + "\nMonth " + currentMonth + ": £" + SalaryController.df.format(currentSaved));
+            showEmergencyFund.setText(showEmergencyFund.getText() + "\nMonth " + currentMonth + ": " + SalaryController.currencyFormat.format(currentSaved));
 
         }
 
