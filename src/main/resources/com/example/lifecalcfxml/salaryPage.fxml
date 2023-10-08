@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="800" prefWidth="500" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.SalaryController">
+<BorderPane prefHeight="800" prefWidth="500" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lifecalcfxml.SalaryController">
     <left>
         <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #272932;" stylesheets="@styleClass.css">
             <fx:include source="menuButtons.fxml" />
@@ -58,6 +58,11 @@
                    </font>
                </TextField>
          </HBox>
+         <Text fx:id="errorText" fill="RED" layoutX="14.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cannot enter a number below 0!" visible="false">
+            <font>
+               <Font size="23.0" />
+            </font>
+         </Text>
         </Pane>
     </center>
 </BorderPane>

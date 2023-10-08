@@ -28,6 +28,8 @@ public class SalaryController {
     private TextField salaryNum;
     @FXML
     private Text showInfo;
+    @FXML
+    private Text errorText;
 
     static MoneyManager mm = new MoneyManager();
 
@@ -61,6 +63,14 @@ public class SalaryController {
         //If it is being edited, then just display the values
         if (!salaryNum.getText().isEmpty()){
             try{
+                if (Double.parseDouble(salaryNum.getText()) <= 0){
+                    errorText.setVisible(true);
+                    showInfo.setText("");
+                    salaryNum.clear();
+                    editDetailsButton.setVisible(false);
+                } else{
+                    errorText.setVisible(false);
+                }
                 if (!isEdited){
                     double salaryText = Double.parseDouble(salaryNum.getText());
                     //Set the variables
