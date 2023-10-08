@@ -30,7 +30,7 @@ public class retirementController {
                     //Do monthly compound interest
                     initialBalance = (initialBalance + SalaryController.investmentAmount) * (1 + averageReturn);
                     if (i % 12 == 0){
-                        retirementText.setText(retirementText.getText() + "Year : " + i / 12 + " -> Balance: £" + SalaryController.df.format(initialBalance) + "\n");
+                        retirementText.setText(retirementText.getText() + "Age : " + (userAge + i / 12) + " -> Balance: £" + SalaryController.df.format(initialBalance) + "\n");
                     }
                 }
             }
