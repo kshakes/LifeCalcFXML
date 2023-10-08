@@ -14,20 +14,23 @@ public class emergencyController {
     private double expenses = SalaryController.expenses;
     public void calcEmergencyFund() {
 
-        //Removed the code while I try and fix issues with it
         int months = Integer.parseInt(numOfMonthsField.getText());
-        int currentMonth = 0;
-        double goal = (expenses-SalaryController.investmentAmount) * months;
-        double currentSaved = 0;
+        if (months <= 0){
+            showEmergencyFund.setText("Cannot set a value below 0");
+        }else{
+            showEmergencyFund.setText("");
+            int currentMonth = 0;
+            double goal = (expenses-SalaryController.investmentAmount) * months;
+            double currentSaved = 0;
 
-        showEmergencyFund.setText("Goal: £" + goal + "\n");
+            showEmergencyFund.setText("Goal: £" + goal + "\n");
 
-        while (currentSaved <= goal){
-            currentSaved += spareMoney;
-            currentMonth++;
-            showEmergencyFund.setText(showEmergencyFund.getText() + "\nMonth " + currentMonth + ": " + SalaryController.currencyFormat.format(currentSaved));
+            while (currentSaved <= goal){
+                currentSaved += spareMoney;
+                currentMonth++;
+                showEmergencyFund.setText(showEmergencyFund.getText() + "\nMonth " + currentMonth + ": " + SalaryController.currencyFormat.format(currentSaved));
 
+            }
         }
-
     }
 }

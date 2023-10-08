@@ -142,18 +142,22 @@ public class SalaryController {
                 //is readable
                 if (checkText.contains("Car Budget:")){
                     carBudget = Double.parseDouble(budgetTypeField.getText());
-                    mm.setCarBudget(carBudget);
-                    budgetTypeField.clear(); //Clear it so the user doesn't have to remove their previous input
-                    budgetTypeText.setText("House Budget:");
-                    isEdited = true;
+                    if (carBudget > 0){
+                        mm.setCarBudget(carBudget);
+                        budgetTypeField.clear(); //Clear it so the user doesn't have to remove their previous input
+                        budgetTypeText.setText("House Budget:");
+                        isEdited = true;
+                    }
                 }
                 else{
                     houseBudget = Double.parseDouble(budgetTypeField.getText());
-                    mm.setHouseBudget(houseBudget);
-                    budgetTypeText.setText("Car Budget:");
-                    budgetTypeField.clear(); //Clear it so the user doesn't have to remove their previous input
-                    calc();
-                    editDetails();
+                    if (houseBudget > 0){
+                        mm.setHouseBudget(houseBudget);
+                        budgetTypeText.setText("Car Budget:");
+                        budgetTypeField.clear(); //Clear it so the user doesn't have to remove their previous input
+                        calc();
+                        editDetails();
+                    }
                 }
             }
         } catch (IllegalArgumentException e){

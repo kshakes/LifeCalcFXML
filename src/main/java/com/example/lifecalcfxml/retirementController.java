@@ -25,11 +25,13 @@ public class retirementController {
             int userAge = Integer.parseInt((ageTextField.getText()));
 
             if (userAge >= 66){
-                System.out.println("You are already at or above the retirement age");
-            } else{
-
+                retirementText.setText("You are already at or above the retirement age");
+            } else if (userAge <= 0){
+                retirementText.setText("Invalid Age");
+            }
+            else{
+                retirementText.setText("");
                 int months = (66-userAge) * 12;
-                System.out.println(months);
 
                 for (int i = 1; i < months; i++){ //For every year in retirement age - years
                     //Do monthly compound interest
