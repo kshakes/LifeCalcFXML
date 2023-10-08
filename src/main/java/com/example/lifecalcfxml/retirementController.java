@@ -2,7 +2,10 @@ package com.example.lifecalcfxml;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+
+import java.text.NumberFormat;
 import java.util.InputMismatchException;
+import java.util.Locale;
 
 public class retirementController {
 
@@ -13,6 +16,8 @@ public class retirementController {
 
     final double averageReturn = 0.08 / 12;
     double initialBalance = 0;
+
+    NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.UK);
 
     public void calcRetirement() {
 
@@ -30,7 +35,7 @@ public class retirementController {
                     //Do monthly compound interest
                     initialBalance = (initialBalance + SalaryController.investmentAmount) * (1 + averageReturn);
                     if (i % 12 == 0){
-                        retirementText.setText(retirementText.getText() + "Age : " + (userAge + i / 12) + " -> Balance: £" + SalaryController.df.format(initialBalance) + "\n");
+                        retirementText.setText(retirementText.getText() + "Age : " + (userAge + i / 12) + " -> Balance: " + currencyFormat.format(initialBalance) + "\n"); //SalaryController.df.format(initialBalance)
                     }
                 }
             }
